@@ -1,0 +1,296 @@
+{
+    "[c]": {
+        "editor.suggest.insertMode": "insert"
+    },
+    "[cmake]": {
+        "editor.formatOnSave": false,
+        "editor.quickSuggestions": {
+            "strings": true
+        }
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.suggest.insertMode": "insert"
+    },
+    "[html]": {
+        "editor.formatOnType": false,
+        "editor.tabSize": 2
+    },
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java",
+        "editor.suggest.snippetsPreventQuickSuggestions": false
+    },
+    "[json]": {
+        "editor.formatOnSave": false,
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+    "[jsonc]": {
+        "editor.formatOnSave": false,
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+    "[plaintext]": {
+        "editor.acceptSuggestionOnCommitCharacter": false,
+        "editor.suggest.showSnippets": false,
+        "editor.suggest.showWords": false,
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false
+    },
+    "[python]": {
+        "editor.formatOnType": false
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+    },
+    "arduino.additionalUrls": [
+        "https://www.pjrc.com/teensy/package_teensy_index.json"
+    ],
+    "arduino.commandPath": "arduino-cli",
+    "arduino.path": "/home/alagyn/bin/",
+    "arduino.useArduinoCli": true,
+    "auto-build.build.reveal": false,
+    "auto-build.build.silent": false,
+    "auto-build.defaultEnv.name": "STM32F103RE_creality",
+    "auto-build.showOnStart": false,
+    "C_Cpp.clang_format_path": "~/bdd/.clang-format",
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.codeAnalysis.exclude": {},
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.suggestSnippets": false,
+    "cmake.allowCommentsInPresetsFile": true,
+    "cmake.configureOnEdit": false,
+    "cmake.configureOnOpen": false,
+    "cmake.generator": "Unix Makefiles",
+    "cmake.showConfigureWithDebuggerNotification": false,
+    "cmake.showOptionsMovedNotification": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.fontFamily": "'Monaspace Neon', monospace",
+    "editor.fontLigatures": "'calt'",
+    "editor.formatOnSave": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.showSlider": "always",
+    "editor.renderWhitespace": "boundary",
+    "editor.selectionClipboard": false,
+    "editor.snippetSuggestions": "none",
+    "editor.suggest.insertMode": "insert",
+    "editor.suggest.showSnippets": false,
+    "editor.tokenColorCustomizations": {
+        "[Visual Studio Dark - C++]": {
+            "textMateRules": [
+                {
+                    //Keywords
+                    "scope": [
+                        "keyword",
+                        "storage.modifier",
+                        "storage.type",
+                        "storage.type.built-in.const",
+                        "storage.type.modifier",
+                        "keyword.control",
+                        "variable.language.this",
+                        "storage.type.function",
+                        "storage.type.class",
+                        "keyword.operator.logical.python",
+                        "storage.type.template"
+                    ],
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#ff9100"
+                    }
+                },
+                {
+                    // Comments
+                    "scope": "comment",
+                    "settings": {
+                        "fontStyle": "bold",
+                        "foreground": "#6e6e6e"
+                    }
+                },
+                {
+                    //Types
+                    "scope": [
+                        "entity.name.type",
+                        "support.class",
+                        "support.type",
+                        "storage.type"
+                    ],
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#7ae4ff"
+                    }
+                },
+                {
+                    // Func args
+                    "scope": "variable.parameter",
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#ffa7a7"
+                    }
+                },
+                {
+                    // Funcs
+                    "scope": [
+                        "entity.name.function",
+                        "support.function"
+                    ],
+                    "settings": {
+                        "foreground": "#ffec82"
+                    }
+                },
+                {
+                    // Macro Funcs
+                    "scope": "entity.name.function.preprocessor",
+                    "settings": {
+                        "foreground": "#ff8a5c"
+                    }
+                },
+                {
+                    //Numbers
+                    "scope": "constant.numeric",
+                    "settings": {
+                        "foreground": "#ff5f5f"
+                    }
+                },
+                {
+                    // Strings
+                    "scope": "string.quoted.double",
+                    "settings": {
+                        "foreground": "#69ff56"
+                    }
+                },
+                {
+                    // Chars
+                    "scope": "string.quoted.single",
+                    "settings": {
+                        "foreground": "#b9ff17"
+                    }
+                },
+                {
+                    // Python strings
+                    "scope": [
+                        "string.quoted.single.python",
+                        "string.quoted.double.python"
+                    ],
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#69ff56"
+                    }
+                },
+                {
+                    // Escaped chars
+                    "scope": "constant.character.escape",
+                    "settings": {
+                        "foreground": "#ffe600"
+                    }
+                },
+                {
+                    // "" <> includes
+                    "scope": [
+                        "string.quoted.double.include",
+                        "string.quoted.other.lt-gt.include.cpp"
+                    ],
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#acacac"
+                    }
+                },
+                {
+                    // Preprocessor directives
+                    "scope": "keyword.control.directive",
+                    "settings": {
+                        "foreground": "#747474"
+                    }
+                },
+                {
+                    // pragmas and stuff
+                    "scope": "entity.other.attribute-name",
+                    "settings": {
+                        "foreground": "#a8a8a8"
+                    }
+                },
+                {
+                    // namespaces
+                    "scope": [
+                        "entity.name.namespace",
+                        "entity.name.scope-resolution"
+                    ],
+                    "settings": {
+                        "foreground": "#59a3f8"
+                    }
+                },
+                {
+                    // operators
+                    "scope": "keyword.operator",
+                    "settings": {
+                        "foreground": "#FFFFFF"
+                    }
+                },
+                {
+                    //names
+                    "scope": "variable",
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#ffffff"
+                    }
+                },
+                {
+                    // Python self
+                    "scope": "variable.parameter.function.language.special.self",
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#d1a2fb"
+                    }
+                }
+            ]
+        }
+    },
+    "evenBetterToml.schema.enabled": false,
+    "explorer.autoReveal": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.sortOrder": "type",
+    "extensions.ignoreRecommendations": true,
+    "files.associations": {
+        ".style.yapf": "properties"
+    },
+    "files.eol": "\n",
+    "git.confirmSync": false,
+    "git.openRepositoryInParentFolders": "never",
+    "git.suggestSmartCommit": false,
+    "html.autoCreateQuotes": false,
+    "http.proxyStrictSSL": false,
+    "java.completion.guessMethodArguments": false,
+    "java.completion.lazyResolveTextEdit.enabled": false,
+    "java.signatureHelp.description.enabled": true,
+    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
+    "python.analysis.completeFunctionParens": false,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.formatting.provider": "yapf",
+    "redhat.telemetry.enabled": false,
+    "remote.SSH.enableDynamicForwarding": false,
+    "remote.SSH.remotePlatform": {
+        "elara-station": "linux"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "sqlite.databaseExtensions": [
+        "db",
+        "db3",
+        "sdb",
+        "s3db",
+        "sqlite",
+        "sqlite3"
+    ],
+    "window.zoomLevel": -1,
+    "workbench.colorTheme": "Visual Studio Dark - C++",
+    "workbench.editor.revealIfOpen": true,
+    "workbench.tree.enableStickyScroll": true
+}
