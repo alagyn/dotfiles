@@ -66,6 +66,7 @@
     "cmake.configureOnEdit": false,
     "cmake.configureOnOpen": false,
     "cmake.generator": "Unix Makefiles",
+    "cmake.loadCompileCommands": true,
     "cmake.showConfigureWithDebuggerNotification": false,
     "cmake.showOptionsMovedNotification": false,
     "diffEditor.ignoreTrimWhitespace": false,
@@ -292,5 +293,13 @@
     "window.zoomLevel": -1,
     "workbench.colorTheme": "Visual Studio Dark - C++",
     "workbench.editor.revealIfOpen": true,
-    "workbench.tree.enableStickyScroll": true
+    "workbench.tree.enableStickyScroll": true,
+    "hediet.vscode-drawio.resizeImages": null,
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "editor.minimap.enabled": false,
+    "python.REPL.enableREPLSmartSend": false,
+    "debug.autoExpandLazyVariables": true
 }
