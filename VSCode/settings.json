@@ -1,12 +1,14 @@
 {
     "[c]": {
-        "editor.suggest.insertMode": "insert"
+        "editor.suggest.insertMode": "insert",
+        "editor.defaultFormatter": "xaver.clang-format"
     },
     "[cmake]": {
         "editor.formatOnSave": false,
         "editor.quickSuggestions": {
             "strings": true
-        }
+        },
+        "editor.suggest.insertMode": "insert"
     },
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format",
@@ -14,6 +16,7 @@
     },
     "[html]": {
         "editor.formatOnType": false,
+        "editor.formatOnSave": false,
         "editor.tabSize": 2
     },
     "[java]": {
@@ -25,14 +28,14 @@
         "editor.quickSuggestions": {
             "strings": true
         },
-        "editor.suggest.insertMode": "replace"
+        "editor.suggest.insertMode": "insert"
     },
     "[jsonc]": {
         "editor.formatOnSave": false,
         "editor.quickSuggestions": {
             "strings": true
         },
-        "editor.suggest.insertMode": "replace"
+        "editor.suggest.insertMode": "insert"
     },
     "[plaintext]": {
         "editor.acceptSuggestionOnCommitCharacter": false,
@@ -42,10 +45,29 @@
         "editor.unicodeHighlight.invisibleCharacters": false
     },
     "[python]": {
-        "editor.formatOnType": false
+        "editor.formatOnType": false,
+        "diffEditor.ignoreTrimWhitespace": true,
+        "editor.defaultFormatter": "eeyore.yapf"
     },
     "[vue]": {
         "editor.defaultFormatter": "Vue.volar"
+    },
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.formatOnSave": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    },
+    "rust-analyzer.completion.autoimport.enable": false,
+    "files.readonlyInclude": {
+        "*/.cargo/registry/src/*/*.rs": true,
+        "*/lib/rustlib/src/rust/library/*/*.rs": true
     },
     "arduino.additionalUrls": [
         "https://www.pjrc.com/teensy/package_teensy_index.json"
@@ -55,13 +77,14 @@
     "arduino.useArduinoCli": true,
     "auto-build.build.reveal": false,
     "auto-build.build.silent": false,
-    "auto-build.defaultEnv.name": "STM32F103RE_creality",
+    "auto-build.defaultEnv.name": "STM32F103RC_creality",
     "auto-build.showOnStart": false,
-    "C_Cpp.clang_format_path": "~/bdd/.clang-format",
+    "C_Cpp.clang_format_path": "/home/alagyn/bdd/dotfiles/.clang-format",
     "C_Cpp.clang_format_style": "file",
     "C_Cpp.codeAnalysis.exclude": {},
     "C_Cpp.default.cppStandard": "c++20",
     "C_Cpp.suggestSnippets": false,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.allowCommentsInPresetsFile": true,
     "cmake.configureOnEdit": false,
     "cmake.configureOnOpen": false,
@@ -72,7 +95,13 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.autoClosingBrackets": "beforeWhitespace",
     "editor.fontFamily": "'Monaspace Neon', monospace",
-    "editor.fontLigatures": "'calt'",
+    // ss01: == !=
+    // ss02: <= >=
+    // ss03: ->
+    // ss07: ::
+    // ss09: <=> >>
+    // liga: ... // ||
+    "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss07', 'ss09', 'liga'",
     "editor.formatOnSave": true,
     "editor.minimap.renderCharacters": false,
     "editor.minimap.showSlider": "always",
@@ -82,173 +111,184 @@
     "editor.suggest.insertMode": "insert",
     "editor.suggest.showSnippets": false,
     "editor.tokenColorCustomizations": {
-        "[Visual Studio Dark - C++]": {
-            "textMateRules": [
-                {
-                    //Keywords
-                    "scope": [
-                        "keyword",
-                        "storage.modifier",
-                        "storage.type",
-                        "storage.type.built-in.const",
-                        "storage.type.modifier",
-                        "keyword.control",
-                        "variable.language.this",
-                        "storage.type.function",
-                        "storage.type.class",
-                        "keyword.operator.logical.python",
-                        "storage.type.template"
-                    ],
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#ff9100"
-                    }
-                },
-                {
-                    // Comments
-                    "scope": "comment",
-                    "settings": {
-                        "fontStyle": "bold",
-                        "foreground": "#6e6e6e"
-                    }
-                },
-                {
-                    //Types
-                    "scope": [
-                        "entity.name.type",
-                        "support.class",
-                        "support.type",
-                        "storage.type"
-                    ],
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#7ae4ff"
-                    }
-                },
-                {
-                    // Func args
-                    "scope": "variable.parameter",
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#ffa7a7"
-                    }
-                },
-                {
-                    // Funcs
-                    "scope": [
-                        "entity.name.function",
-                        "support.function"
-                    ],
-                    "settings": {
-                        "foreground": "#ffec82"
-                    }
-                },
-                {
-                    // Macro Funcs
-                    "scope": "entity.name.function.preprocessor",
-                    "settings": {
-                        "foreground": "#ff8a5c"
-                    }
-                },
-                {
-                    //Numbers
-                    "scope": "constant.numeric",
-                    "settings": {
-                        "foreground": "#ff5f5f"
-                    }
-                },
-                {
-                    // Strings
-                    "scope": "string.quoted.double",
-                    "settings": {
-                        "foreground": "#69ff56"
-                    }
-                },
-                {
-                    // Chars
-                    "scope": "string.quoted.single",
-                    "settings": {
-                        "foreground": "#b9ff17"
-                    }
-                },
-                {
-                    // Python strings
-                    "scope": [
-                        "string.quoted.single.python",
-                        "string.quoted.double.python"
-                    ],
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#69ff56"
-                    }
-                },
-                {
-                    // Escaped chars
-                    "scope": "constant.character.escape",
-                    "settings": {
-                        "foreground": "#ffe600"
-                    }
-                },
-                {
-                    // "" <> includes
-                    "scope": [
-                        "string.quoted.double.include",
-                        "string.quoted.other.lt-gt.include.cpp"
-                    ],
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#acacac"
-                    }
-                },
-                {
-                    // Preprocessor directives
-                    "scope": "keyword.control.directive",
-                    "settings": {
-                        "foreground": "#747474"
-                    }
-                },
-                {
-                    // pragmas and stuff
-                    "scope": "entity.other.attribute-name",
-                    "settings": {
-                        "foreground": "#a8a8a8"
-                    }
-                },
-                {
-                    // namespaces
-                    "scope": [
-                        "entity.name.namespace",
-                        "entity.name.scope-resolution"
-                    ],
-                    "settings": {
-                        "foreground": "#59a3f8"
-                    }
-                },
-                {
-                    // operators
-                    "scope": "keyword.operator",
-                    "settings": {
-                        "foreground": "#FFFFFF"
-                    }
-                },
-                {
-                    //names
-                    "scope": "variable",
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#ffffff"
-                    }
-                },
-                {
-                    // Python self
-                    "scope": "variable.parameter.function.language.special.self",
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#d1a2fb"
-                    }
+        "textMateRules": [
+            {
+                //Keywords
+                "scope": [
+                    "keyword",
+                    "storage.modifier",
+                    "storage.type",
+                    "storage.type.built-in.const",
+                    "storage.type.enum",
+                    "storage.type.modifier",
+                    "keyword.control",
+                    "variable.language.this",
+                    "storage.type.function",
+                    "storage.type.class",
+                    "keyword.operator.logical.python",
+                    "storage.type.template"
+                ],
+                "settings": {
+                    "fontStyle": "",
+                    "foreground": "#ff9100"
                 }
-            ]
-        }
+            },
+            {
+                // Comments
+                "scope": "comment",
+                "settings": {
+                    "fontStyle": "bold",
+                    "foreground": "#6e6e6e"
+                }
+            },
+            {
+                //Types
+                "scope": [
+                    "entity.name.type",
+                    "support.class",
+                    "support.type",
+                    "storage.type"
+                ],
+                "settings": {
+                    "fontStyle": "",
+                    "foreground": "#7ae4ff"
+                }
+            },
+            {
+                // Func args
+                "scope": "variable.parameter",
+                "settings": {
+                    "fontStyle": "",
+                    "foreground": "#ffa7a7"
+                }
+            },
+            {
+                // Funcs
+                "scope": [
+                    "entity.name.function",
+                    "support.function"
+                ],
+                "settings": {
+                    "foreground": "#ffec82"
+                }
+            },
+            {
+                // Macro Funcs
+                "scope": "entity.name.function.preprocessor",
+                "settings": {
+                    "foreground": "#ff5e52",
+                }
+            },
+            {
+                //Numbers
+                "scope": "constant.numeric",
+                "settings": {
+                    "foreground": "#ff5f5f"
+                }
+            },
+            {
+                // Strings
+                "scope": "string.quoted.double",
+                "settings": {
+                    "foreground": "#69ff56"
+                }
+            },
+            {
+                // Chars
+                "scope": "string.quoted.single",
+                "settings": {
+                    "foreground": "#b9ff17"
+                }
+            },
+            {
+                // Python strings
+                "scope": [
+                    "string.quoted.single.python",
+                    "string.quoted.double.python"
+                ],
+                "settings": {
+                    "fontStyle": "",
+                    "foreground": "#69ff56"
+                }
+            },
+            {
+                // Escaped chars
+                "scope": "constant.character.escape",
+                "settings": {
+                    "foreground": "#ffe600"
+                }
+            },
+            {
+                // "" <> includes
+                "scope": [
+                    "string.quoted.double.include",
+                    "string.quoted.other.lt-gt.include.cpp"
+                ],
+                "settings": {
+                    "fontStyle": "",
+                    "foreground": "#acacac"
+                }
+            },
+            {
+                // Preprocessor directives
+                "scope": "keyword.control.directive",
+                "settings": {
+                    "foreground": "#747474"
+                }
+            },
+            {
+                // pragmas and stuff
+                "scope": "entity.other.attribute-name",
+                "settings": {
+                    "foreground": "#a8a8a8",
+                    "fontStyle": "underline"
+                }
+            },
+            {
+                // namespaces
+                "scope": [
+                    "entity.name.namespace",
+                    "entity.name.scope-resolution"
+                ],
+                "settings": {
+                    "foreground": "#59a3f8"
+                }
+            },
+            {
+                // operators
+                "scope": "keyword.operator",
+                "settings": {
+                    "foreground": "#FFFFFF"
+                }
+            },
+            {
+                // Python self/cls
+                "scope": [
+                    "variable.parameter.function.language.special.self.python",
+                    "variable.parameter.function.language.special.cls.python"
+                ],
+                "settings": {
+                    "fontStyle": "",
+                    "foreground": "#d1a2fb"
+                }
+            },
+            {
+                //names
+                "scope": ["variable"],
+                "settings": {
+                    "fontStyle": "",
+                    "foreground": "#ffffff"
+                }
+            },
+            {
+                // globals
+                "scope": ["variable.other.global"],
+                "settings": {
+                    "foreground": "#8d98ff",
+                    "fontStyle": ""
+                }
+            }
+        ]
     },
     "evenBetterToml.schema.enabled": false,
     "explorer.autoReveal": false,
@@ -256,7 +296,10 @@
     "explorer.sortOrder": "type",
     "extensions.ignoreRecommendations": true,
     "files.associations": {
-        ".style.yapf": "properties"
+        ".style.yapf": "properties",
+        "*.docker": "dockerfile",
+        "*.rml": "xml",
+        "*.rcss": "css"
     },
     "files.eol": "\n",
     "git.confirmSync": false,
@@ -291,7 +334,6 @@
         "sqlite3"
     ],
     "window.zoomLevel": -1,
-    "workbench.colorTheme": "Visual Studio Dark - C++",
     "workbench.editor.revealIfOpen": true,
     "workbench.tree.enableStickyScroll": true,
     "hediet.vscode-drawio.resizeImages": null,
@@ -301,5 +343,39 @@
     ],
     "editor.minimap.enabled": false,
     "python.REPL.enableREPLSmartSend": false,
-    "debug.autoExpandLazyVariables": true
+    "window.titleBarStyle": "custom",
+    "workbench.experimental.enableNewProfilesUI": true,
+    "window.newWindowProfile": "Default",
+    "yaml.format.enable": false,
+    "yaml.extension.recommendations": false,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.REPL.sendToNativeREPL": false,
+    "chat.commandCenter.enabled": false,
+    "editor.snippets.codeActions.enabled": false,
+    "javascript.suggest.classMemberSnippets.enabled": false,
+    "typescript.suggest.classMemberSnippets.enabled": false,
+    "typescript.suggest.objectLiteralMethodSnippets.enabled": false,
+    "git.blame.statusBarItem.enabled": true,
+    "C_Cpp.copilotHover": "disabled",
+    "telemetry.feedback.enabled": false,
+    "dotnetAcquisitionExtension.enableTelemetry": false,
+    "python.defaultInterpreterPath": "/bin/python",
+    "python.analysis.typeCheckingMode": "standard",
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "platformio-ide.autoOpenPlatformIOIniFile": false,
+    "dev.containers.dockerPath": "podman",
+    "chat.disableAIFeatures": true,
+    "editor.copyWithSyntaxHighlighting": false,
+    "yapf.interpreter": [
+        "python3"
+    ],
+    "scm.repositories.selectionMode": "single"
 }

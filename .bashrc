@@ -26,12 +26,16 @@ unset rc
 
 set_prompt()
 {
+    local RET_CODE=$?
+
     # Green
     local G="\[\e[1;32m\]"
     # Cyan
     local C="\[\e[1;36m\]"
     # Brown
     local B="\[\e[1;33m\]"
+    # Red
+    local R="\[\e[1;31m\]"
     # End
     local E="\[\e[0m\]"
     # Gets the name of the current git branch for the CWD
@@ -39,6 +43,12 @@ set_prompt()
     # https://gist.github.com/Ragnoroct/c4c3bf37913afb9469d8fc8cffea5b2f?permalink_comment_id=3560622#gistcomment-3560622
     local headfile head branch
     local dir="$PWD"
+    local prevError=""
+
+    if [ $RET_CODE -ne 0 ]
+    then
+        prevError="[${R}Command returned code ${RET_CODE}${E}]\n"
+    fi
 
     while [ -n "$dir" ]; do
         if [ -e "$dir/.git/HEAD" ]; then
@@ -87,7 +97,7 @@ set_prompt()
     fi
 
     #\n[user@host cwd] (branch) (venv)\n$
-    export PS1="${E}\n[${G}\u${E}@${C}\h${E} \w] ${branch} ${venv}\n$ "
+    export PS1="${E}\n${prevError}[${G}\u${E}@${C}\h${E} \w] ${branch} ${venv}\n$ "
 }
 
 export PROMPT_COMMAND=set_prompt
@@ -95,3 +105,7 @@ export HISTCONTROL=ignoreboth
 
 alias ll="ls -alh"
 
+. "$HOME/.cargo/env"
+
+eval "$(fzf --bash)"
+_fzf_setup_completion path nano
