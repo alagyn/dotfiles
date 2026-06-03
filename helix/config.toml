@@ -1,0 +1,42 @@
+theme = "ayu_dark"
+
+[editor]
+scrolloff = 10
+completion-timeout = 100
+bufferline = "always"
+color-modes = true
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+other-lines = "warning"
+
+[editor.statusline]
+# mostly default, added version-control
+left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator", "spacer", "version-control"]
+# Added file-indent-style
+right = ["file-indent-style", "spacer", "diagnostics", "selections", "register", "position", "file-encoding"]
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.indent-guides]
+render = true
+
+[editor.whitespace.render]
+#space = "none"
+tab = "all"
+#nbsp = "none"
+#nnbsp = "none"
+#newline = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+newline = "⏎"
+tabpad = "·" 
+# Tabs will look like "→···" (depending on tab width)
