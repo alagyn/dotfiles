@@ -377,5 +377,6 @@
     "yapf.interpreter": [
         "python3"
     ],
-    "scm.repositories.selectionMode": "single"
+    "scm.repositories.selectionMode": "single",
+    "telemetry.telemetryLevel": "off"
 }
