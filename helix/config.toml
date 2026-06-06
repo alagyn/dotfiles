@@ -1,4 +1,4 @@
-theme = "ayu_dark"
+theme = "alagyn"
 
 [editor]
 scrolloff = 10
@@ -8,6 +8,7 @@ color-modes = true
 continue-comments = false
 # line-number = "relative"
 popup-border = "all"
+cursorline = true
 
 [editor.lsp]
 display-inlay-hints = true

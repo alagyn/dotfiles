@@ -1,3 +1,26 @@
-inherits = "ayu-dark"
+inherits = "ayu_dark"
 
+"variable.builtin" = "orange"
+"constant" = "red"
+"namespace" = "#59a3f8"
+"variable.parameter" = "#ffa7a7"
+"function.macro" = "#ff5e52"
+"function.special" = "#ff5e52"
 
+"keyword.control" = "orange"
+"keyword.directive" = "#747474"
+
+"ui.background.separator" = "orange"
+"ui.linenr" = "dim_orange"
+"ui.linenr.selected" = "orange"
+"ui.statusline" = {bg = "dim_brown"}
+"ui.statusline.inactive" = {bg = "black"}
+
+"ui.cursor.primary.normal" = { fg = "dark_gray", bg = "blue"}
+"ui.cursor.primary.select" = { fg = "dark_gray", bg = "magenta"}
+
+[palette]
+dim_orange = "#a06941"
+dim_brown = "#3d2715"
+blue = "#7ae4ff"
+# green = "#69ff56"

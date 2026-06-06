@@ -3,15 +3,17 @@
 SCRIPT_ROOT=$(realpath $(dirname "$0"))
 
 # VS CODE configs
+echo "Linking VScode configs"
 VSCODE_CFG_DIR=~/.config/Code/User
-mkdir --parents "$VS_CFG_DIR"
+mkdir --parents "$VSCODE_CFG_DIR"
 rm -f $VSCODE_CFG_DIR/settings.json
-ln -s $"SCRIPT_ROOT/VSCode/settings.json" "$VSCODE_CFG_DIR/settings.json"
+ln -s "$SCRIPT_ROOT/VSCode/settings.json" "$VSCODE_CFG_DIR/settings.json"
 
 rm -f ~/.config/Code/User/keybindings.json
 ln -s "$SCRIPT_ROOT/VSCode/keybindings.json" ~/.config/Code/User/keybindings.json
 
 # Helix configs
+echo "Linking Helix configs"
 HELIX_CFG_DIR=~/.config/helix
 mkdir --parents $HELIX_CFG_DIR
 rm -f $HELIX_CFG_DIR/config.toml
