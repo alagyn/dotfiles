@@ -16,3 +16,11 @@ basedpyright.analysis.diagnosticMode = "openFilesOnly"
 [[language]]
 name = "cpp"
 auto-format = true
+
+# Bash
+[[language]]
+name = "bash"
+language-servers = ["bashls"]
+
+[language-server.bashls]
+command = "bashls"
