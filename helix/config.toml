@@ -27,17 +27,9 @@ right = ["file-indent-style", "spacer", "diagnostics", "selections", "register",
 render = true
 
 [editor.whitespace.render]
-#space = "none"
 tab = "all"
-#nbsp = "none"
-#nnbsp = "none"
-#newline = "all"
 
 [editor.whitespace.characters]
-space = "·"
-nbsp = "⍽"
-nnbsp = "␣"
 tab = "→"
-newline = "⏎"
 tabpad = "·" 
 # Tabs will look like "→···" (depending on tab width)

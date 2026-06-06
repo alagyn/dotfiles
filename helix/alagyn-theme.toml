@@ -16,6 +16,8 @@ inherits = "ayu_dark"
 "ui.statusline" = {bg = "dim_brown"}
 "ui.statusline.inactive" = {bg = "black"}
 
+"ui.cursor.normal" = { fg = "dark_gray", bg = "dim_blue" }
+"ui.cursor.select" = { fg = "dark_gray", bg = "dim_magenta" }
 "ui.cursor.primary.normal" = { fg = "dark_gray", bg = "blue"}
 "ui.cursor.primary.select" = { fg = "dark_gray", bg = "magenta"}
 
@@ -23,4 +25,6 @@ inherits = "ayu_dark"
 dim_orange = "#a06941"
 dim_brown = "#3d2715"
 blue = "#7ae4ff"
+dim_blue = "#5386ad"
+dim_magenta = "#67577c" 
 # green = "#69ff56"
