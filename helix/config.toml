@@ -1,7 +1,7 @@
 theme = "alagyn"
 
 [editor]
-scrolloff = 10
+scrolloff = 8
 completion-timeout = 100
 bufferline = "always"
 color-modes = true
@@ -28,8 +28,20 @@ render = true
 
 [editor.whitespace.render]
 tab = "all"
+space = "all"
 
 [editor.whitespace.characters]
+space = "·"
 tab = "→"
 tabpad = "·" 
 # Tabs will look like "→···" (depending on tab width)
+
+[keys.normal]
+C-g = [
+    ":write-all",
+    ":insert-output lazygit >/dev/tty",
+    ":redraw",
+    ":reload-all",
+   ':set mouse false',
+   ':set mouse true'
+]

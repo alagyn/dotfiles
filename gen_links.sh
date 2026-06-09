@@ -26,3 +26,10 @@ HELIX_THEME_DIR=$HELIX_CFG_DIR/themes
 mkdir --parents $HELIX_THEME_DIR
 rm -f "$HELIX_THEME_DIR/alagyn.toml"
 ln -s "$SCRIPT_ROOT/helix/alagyn-theme.toml" "$HELIX_THEME_DIR/alagyn.toml"
+
+# ghostty configs
+echo "Linking ghostty configs"
+GHOSTTY_CFG_DIR=~/.config/ghostty
+mkdir --parents $GHOSTTY_CFG_DIR
+rm -f $GHOSTTY_CFG_DIR/config.ghostty
+ln -s "$SCRIPT_ROOT"/config.ghostty $GHOSTTY_CFG_DIR/

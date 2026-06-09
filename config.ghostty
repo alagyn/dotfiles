@@ -1,0 +1,21 @@
+theme = Ayu
+# window-theme = ghostty
+window-subtitle = working-directory
+
+window-width = 120
+window-height = 40
+
+# command = TERM=xterm-256color /usr/bin/bash
+
+# shell-integration-features = no-xterm-ghostty, no-ssh-env
+# shell-integration = none
+shell-integration-features = ssh-terminfo
+
+quick-terminal-animation-duration = 0
+
+font-family = Monaspace Krypton Light
+font-feature = calt, ss01, ss02, ss03, ss07, ss09, liga
+
+keybind = alt+arrow_left=goto_split:left
+keybind = alt+arrow_right=goto_split:right
+keybind = ctrl+shift+(=new_split:right
