@@ -1,0 +1,106 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt notify
+unsetopt autocd beep nomatch
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/alagyn/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+precmd()
+{
+    local RET_CODE=$?
+
+    # Green
+    local G=$'%{\e[1;32m%}'
+    # Cyan
+    local C=$'%{\e[1;36m%}'
+    # Brown
+    local B=$'%{\e[1;33m%}'
+    # Red
+    local R=$'%{\e[1;31m%}'
+    # End
+    local E=$'%{\e[0m%}'
+    # Gets the name of the current git branch for the CWD
+    # Modified from:
+    # https://gist.github.com/Ragnoroct/c4c3bf37913afb9469d8fc8cffea5b2f?permalink_comment_id=3560622#gistcomment-3560622
+    local headfile head branch
+    local dir="$PWD"
+    local prevError=""
+
+    if [ $RET_CODE -ne 0 ]
+    then
+        prevError="[${R}Command returned code ${RET_CODE}${E}]\n"
+    fi
+
+    while [ -n "$dir" ]; do
+        if [ -e "$dir/.git/HEAD" ]; then
+            headfile="$dir/.git/HEAD"
+            break
+        fi
+        dir="${dir%/*}"
+    done
+
+    if [ -e "$headfile" ]; then
+        read -r head < "$headfile" || return
+        case "$head" in
+            ref:*)
+                branch="${head##*/}"
+                ;;
+            "") 
+                branch=""
+                ;;
+            *) 
+                #Detached head, check if we are pointing at a tagged commit
+                tags=`git tag --points-at HEAD`
+
+                if [ -e "$tags" ]
+                then
+                    # if not, just use a bit of the hash
+                    branch="${head:0:7}"
+                else
+                    # else use the tag(s) as the branch
+                    branch=$tags
+                fi
+                ;;
+        esac
+    fi
+
+    if [ -n "$branch" ]
+    then
+        branch="(${B}$branch${E})"
+    fi
+
+    # Check for a python virtual env
+    if [ -z "$VIRTUAL_ENV" ]
+    then
+        venv=""
+    else
+        venv="[${G}`realpath --relative-to=$HOME $VIRTUAL_ENV`${E}]"
+    fi
+
+    local NL=$'\n'
+    #\n[user@host cwd] (branch) (venv)\n$
+    export PROMPT="${E}${NL}${prevError}[${G}%n${E}@${C}%M${E} %~] ${branch} ${venv}${NL}$ "
+}
+
+export HISTCONTROL=ignoreboth
+
+alias ll="ls -alh"
+
+# . "$HOME/.cargo/env"
+
+source <(fzf --zsh)
+# _fzf_setup_completion path nano
