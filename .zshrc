@@ -4,15 +4,24 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt notify
 unsetopt autocd beep nomatch
-bindkey -e
+unsetopt menu_complete
+setopt noautomenu
+setopt HIST_SAVE_NO_DUPS
+# bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/alagyn/.zshrc'
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit; compinit
 # End of lines added by compinstall
-
+zstyle ':completion:*' insert-unambiguous true
+# zstyle ':completion:*' completer _complete
+# Use `cat` to get control codes
+bindkey '\t' expand-or-complete
+bindkey '^[[3~' delete-char
+bindkey '^H' backward-kill-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
@@ -40,9 +49,11 @@ precmd()
     local dir="$PWD"
     local prevError=""
 
+    local NL=$'\n'
+
     if [ $RET_CODE -ne 0 ]
     then
-        prevError="[${R}Command returned code ${RET_CODE}${E}]\n"
+        prevError="[${R}Command returned code ${RET_CODE}${E}]${NL}"
     fi
 
     while [ -n "$dir" ]; do
@@ -80,7 +91,7 @@ precmd()
 
     if [ -n "$branch" ]
     then
-        branch="(${B}$branch${E})"
+        branch="(󰘬 ${B}$branch${E})"
     fi
 
     # Check for a python virtual env
@@ -88,17 +99,15 @@ precmd()
     then
         venv=""
     else
-        venv="[${G}`realpath --relative-to=$HOME $VIRTUAL_ENV`${E}]"
+        venv="[ ${G}`realpath --relative-to=$HOME $VIRTUAL_ENV`${E}]"
     fi
 
-    local NL=$'\n'
     #\n[user@host cwd] (branch) (venv)\n$
     export PROMPT="${E}${NL}${prevError}[${G}%n${E}@${C}%M${E} %~] ${branch} ${venv}${NL}$ "
 }
 
-export HISTCONTROL=ignoreboth
-
-alias ll="ls -alh"
+alias ls="ls --color=auto"
+alias ll="ls --color=auto -alh"
 
 # . "$HOME/.cargo/env"
 

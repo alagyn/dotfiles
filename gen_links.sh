@@ -33,3 +33,14 @@ GHOSTTY_CFG_DIR=~/.config/ghostty
 mkdir --parents $GHOSTTY_CFG_DIR
 rm -f $GHOSTTY_CFG_DIR/config.ghostty
 ln -s "$SCRIPT_ROOT"/config.ghostty $GHOSTTY_CFG_DIR/
+
+# lazygit configs
+echo "Linking lazygit configs"
+LAZYGIT_CFG_DIR=~/.config/lazygit
+mkdir --parents $LAZYGIT_CFG_DIR
+rm -rf $LAZYGIT_CFG_DIR/config.yml
+ln -s "$SCRIPT_ROOT"/lazygit.config.yaml $LAZYGIT_CFG_DIR/config.yml
+
+# Misc
+rm -f ~/.nanorc
+ln -s "$SCRIPT_ROOT"/.nanorc ~/
