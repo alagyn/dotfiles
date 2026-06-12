@@ -15,13 +15,14 @@ zstyle :compinstall filename '/home/alagyn/.zshrc'
 autoload -Uz compinit; compinit
 # End of lines added by compinstall
 zstyle ':completion:*' insert-unambiguous true
-# zstyle ':completion:*' completer _complete
+
 # Use `cat` to get control codes
 bindkey '\t' expand-or-complete
 bindkey '^[[3~' delete-char
 bindkey '^H' backward-kill-word
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
+
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
