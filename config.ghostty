@@ -6,10 +6,9 @@ window-width = 120
 window-height = 40
 
 # command = TERM=xterm-256color /usr/bin/bash
-
+shell-integration-features = no-ssh-terminfo, ssh-env
 # shell-integration-features = no-xterm-ghostty, no-ssh-env
 # shell-integration = none
-shell-integration-features = ssh-terminfo
 
 quick-terminal-animation-duration = 0
 

@@ -15,7 +15,7 @@ zstyle :compinstall filename '/home/alagyn/.zshrc'
 autoload -Uz compinit; compinit
 # End of lines added by compinstall
 zstyle ':completion:*' insert-unambiguous true
-
+zstyle ':completion:*' completer _extensions _complete
 # Use `cat` to get control codes
 bindkey '\t' expand-or-complete
 bindkey '^[[3~' delete-char
