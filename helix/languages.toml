@@ -34,3 +34,11 @@ language-servers = [{ name = "neocmakelsp" }]
 [language-server.neocmakelsp]
 command = "neocmakelsp"
 args = ["stdio"]
+
+# QML
+[[language]]
+name = "qml"
+language-servers = ["qmlls6"]
+
+[language-server.qmlls6]
+command = "qmlls6"

@@ -46,9 +46,17 @@ C-g = [
    ':set mouse false',
    ':set mouse true'
 ]
+# Ctrl Left/Right to jump words
 C-right = "move_next_word_end"
 C-left = "move_prev_word_start"
+# Insert a newline in normal mode
 A-ret = "insert_newline"
+# Emulate VS code ctrl-p open file
+C-p = "file_picker"
+# Collapse extra cursors if you mash escape
+esc = "keep_primary_selection"
+# Emulate VS code ctrl-d select next match
+C-d = ["search_selection", "extend_search_next"]
 
 [keys.normal.m]
 # Add a macro to select the current word
@@ -59,3 +67,5 @@ C-right = "move_next_word_start"
 C-left = "move_prev_word_start"
 C-backspace = "delete_word_backward"
 C-del = "delete_word_forward"
+C-p = "file_picker"
+

@@ -12,6 +12,9 @@ shell-integration-features = no-ssh-terminfo, ssh-env
 
 quick-terminal-animation-duration = 0
 
+quit-after-last-window-closed = true
+quit-after-last-window-closed-delay = 5m
+
 font-family = Monaspace Krypton NF Light
 font-size = 11
 font-feature = calt, ss01, ss02, ss03, ss07, ss09, liga
