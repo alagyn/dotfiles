@@ -41,9 +41,6 @@ mkdir --parents $LAZYGIT_CFG_DIR
 rm -rf $LAZYGIT_CFG_DIR/config.yml
 ln -s "$SCRIPT_ROOT"/lazygit.config.yaml $LAZYGIT_CFG_DIR/config.yml
 
-# Quickshell
-ln -s "$SCRIPT_ROOT"/quickshell ~/.config/
-
 # Misc
 rm -f ~/.nanorc
 ln -s "$SCRIPT_ROOT"/.nanorc ~/
