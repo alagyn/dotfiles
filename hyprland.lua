@@ -62,6 +62,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("systemctl --user start xdg-desktop-portal")
     hl.exec_cmd("systemctl --user start xdg-desktop-portal-hyprland")
     hl.exec_cmd("systemctl --user start xdg-desktop-portal-gtk")
+    hl.exec_cmd("kbuildsycoca6")
     -- hl.exec_cmd("waybar")
     hl.exec_cmd("quickshell")
     hl.exec_cmd("dunst")
@@ -158,6 +159,9 @@ hl.config({
 
     animations = {
         enabled = true,
+    },
+    input = {
+        kb_options = "caps:escape",
     },
 })
 
@@ -309,8 +313,16 @@ for i = 1, 10 do
 end
 
 -- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+-- hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
+-- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+
+
+-- Screenshotting
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(
+    'grim -g "$(slurp -c \'##ff0000ff\')" -t ppm - |' ..
+    ' satty --filename - --copy-command wl-copy --fullscreen '..
+    '--output-filename ~/Pictures/Screenshots/satty-$(date \'+%Y%m%d-%H:%M:%S\').png'
+    ))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
