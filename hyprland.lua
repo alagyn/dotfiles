@@ -160,10 +160,8 @@ hl.config({
     animations = {
         enabled = true,
     },
-    input = {
-        kb_options = "caps:escape",
-    },
 })
+
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
@@ -253,9 +251,10 @@ hl.config({
         kb_layout  = "us",
         kb_variant = "",
         kb_model   = "",
-        kb_options = "",
+        kb_options = "caps:escape_shifted_capslock",
         kb_rules   = "",
 
+        -- Mouse focus follows mouse, keyboard focus doesn't
         follow_mouse = 2,
 
         sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
