@@ -63,6 +63,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("systemctl --user start xdg-desktop-portal-hyprland")
     hl.exec_cmd("systemctl --user start xdg-desktop-portal-gtk")
     hl.exec_cmd("kbuildsycoca6")
+    hl.exec_cmd("swaybg --image /home/alagyn/art/BDD/skull.png --mode fit --color 262a2b")
     -- hl.exec_cmd("waybar")
     hl.exec_cmd("quickshell")
     hl.exec_cmd("dunst")
@@ -261,6 +262,7 @@ hl.config({
 
         touchpad = {
             natural_scroll = true,
+            scroll_factor = 0.5
         },
     },
 })
