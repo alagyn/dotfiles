@@ -13,6 +13,7 @@ cursorline = true
 [editor.lsp]
 display-inlay-hints = false
 auto-document-highlight = true
+snippets = false
 
 [editor.inline-diagnostics]
 cursor-line = "warning"

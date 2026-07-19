@@ -277,8 +277,8 @@ hl.gesture({
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
 hl.device({
     name        = "mosart-semi.-2.4g-office-mouse",
-    sensitivity = 0.5,
-    accel_profile = "flat"
+    sensitivity = 1.0,
+    accel_profile = "custom 0"
 })
 
 
@@ -379,6 +379,18 @@ hl.window_rule({
     },
 
     no_focus = true,
+})
+
+
+hl.window_rule({
+    -- Make steam windows float
+    name = "fix-steam-windows",
+    match = {
+        class = "^(steam)$",
+        title = "negative:^(Steam)$",
+    },
+
+    float = true
 })
 
 -- Layer rules also return a handle.

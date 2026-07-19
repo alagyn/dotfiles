@@ -22,3 +22,7 @@ font-feature = calt, ss01, ss02, ss03, ss07, ss09, liga
 keybind = alt+arrow_left=goto_split:left
 keybind = alt+arrow_right=goto_split:right
 keybind = ctrl+shift+(=new_split:right
+
+keybind = ctrl+shift+e=new_split:down
+keybind = chain=resize_split:down,300
+keybind = chain=goto_split:up
