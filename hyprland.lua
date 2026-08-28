@@ -320,7 +320,7 @@ end
 
 -- Screenshotting
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(
-    'grim -g "$(slurp -c \'##ff0000ff\')" -t ppm - |' ..
+    'grim -g "$(slurp)" -t ppm - |' ..
     ' satty --filename - --copy-command wl-copy --fullscreen '..
     '--output-filename ~/Pictures/Screenshots/satty-$(date \'+%Y%m%d-%H:%M:%S\').png'
     ))
