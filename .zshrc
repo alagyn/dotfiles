@@ -107,7 +107,7 @@ precmd()
     export PROMPT="${E}${NL}${prevError}[${G}%n${E}@${C}%M${E} %~] ${branch} ${venv}${NL}$ "
 }
 
-alias ls="ls --color=auto"
+alias ls="ls -a --color=auto"
 alias ll="ls --color=auto -alh"
 
 # . "$HOME/.cargo/env"

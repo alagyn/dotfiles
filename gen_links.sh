@@ -76,3 +76,16 @@ then
   rm -f ~/.nanorc
   ln -s "$SCRIPT_ROOT"/.nanorc ~/
 fi
+
+# Hyprland
+if check_target hyprland
+then
+  echo "Linking hyprland configs"
+  HYPRLAND_CFG_DIR=~/.config/hypr
+  mkdir --parents $HYPRLAND_CFG_DIR
+  rm -f "$HYPRLAND_CFG_DIR"/hyprland.lua
+  ln -s "$SCRIPT_ROOT"/hyprland.lua "$HYPRLAND_CFG_DIR"/hyprland.lua
+  rm -f "$HYPRLAND_CFG_DIR"/hyprlock.conf
+  ln -s "$SCRIPT_ROOT"/hyprlock.conf "$HYPRLAND_CFG_DIR"/hyprlock.conf
+fi
+  
