@@ -87,5 +87,9 @@ then
   ln -s "$SCRIPT_ROOT"/hyprland.lua "$HYPRLAND_CFG_DIR"/hyprland.lua
   rm -f "$HYPRLAND_CFG_DIR"/hyprlock.conf
   ln -s "$SCRIPT_ROOT"/hyprlock.conf "$HYPRLAND_CFG_DIR"/hyprlock.conf
+  rm -f "$HYPRLAND_CFG_DIR"/hypridle.conf
+  ln -s "$SCRIPT_ROOT"/hypridle.conf "$HYPRLAND_CFG_DIR"/hypridle.conf
+  rm -f "$HYPRLAND_CFG_DIR"/hypridle.conf
+  ln -s "$SCRIPT_ROOT"/hypridle.conf "$HYPRLAND_CFG_DIR"/hypridle.conf
 fi
   
